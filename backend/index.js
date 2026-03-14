@@ -44,10 +44,11 @@ app.use((req, res) => {
   });
 });
 
-const PORT = SERVER_CONFIG.PORT;
+const PORT = process.env.PORT || SERVER_CONFIG.PORT;
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server is running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
+
   console.log(`📧 Email receiver: imanaswi.patil@gmail.com`);
   console.log(`🌍 Environment: ${SERVER_CONFIG.NODE_ENV}`);
 });
